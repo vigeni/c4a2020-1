@@ -17,7 +17,10 @@ def extractNumber(phone):
 
 
 def prompt():
-    phone = input("Please input your number, including the country code, without leaving zero's.\n")
+    phone = input("Please input your number, including the country code, without leading zeros. Enter 0 to exit. \n")
+    if phone == "0":
+        print("Bye!")
+        exit()
     if not phone.isnumeric():
         return handleError("Phone number is invalid")
     if not len(phone) == 12:
